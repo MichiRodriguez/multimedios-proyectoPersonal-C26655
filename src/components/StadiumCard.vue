@@ -9,7 +9,6 @@
         @error="onImgError"
       />
       <span v-if="estadio.esFinal" class="badge-final">🏆 FINAL</span>
-      <span class="badge-pais">{{ bandera }} {{ estadio.pais }}</span>
     </div>
 
     <div class="card-body">
