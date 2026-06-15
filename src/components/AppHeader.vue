@@ -9,13 +9,15 @@
         </div>
       </div>
       <button class="toggle-btn" @click="$emit('toggleDark')" :title="darkMode ? 'Modo claro' : 'Modo oscuro'">
-        {{ darkMode ? '☀️' : '🌙' }}
+        <Sun v-if="darkMode" :size="20" />
+        <Moon v-else :size="20" />
       </button>
     </div>
   </header>
 </template>
 
 <script setup>
+import { Sun, Moon } from '@lucide/vue'
 defineProps({ darkMode: Boolean })
 defineEmits(['toggleDark'])
 </script>

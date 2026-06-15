@@ -3,8 +3,8 @@
     <AppHeader :darkMode="darkMode" @toggleDark="toggleDark" />
 
     <main class="main-content">
-      <div v-if="cargando" class="estado-msg">⏳ Cargando estadios...</div>
-      <div v-else-if="error" class="estado-msg error">❌ {{ error }}</div>
+      <div v-if="cargando" class="estado-msg"><Loader2 :size="20" class="spin" /> Cargando estadios...</div>
+      <div v-else-if="error" class="estado-msg error"><AlertCircle :size="20" /> {{ error }}</div>
 
       <template v-else>
         <FilterBar
@@ -40,6 +40,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { Loader2, AlertCircle } from '@lucide/vue'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 import FilterBar from './components/FilterBar.vue'
@@ -97,10 +98,15 @@ function abrirModal(estadio) {
   gap: 1.5rem;
 }
 .estado-msg {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   color: var(--text-muted);
   padding: 4rem 1rem;
   font-size: 1.1rem;
 }
 .estado-msg.error { color: var(--accent2); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1s linear infinite; }
 </style>

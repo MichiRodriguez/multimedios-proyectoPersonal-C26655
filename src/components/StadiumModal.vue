@@ -1,14 +1,61 @@
 <template>
   <div class="overlay" @click.self="$emit('cerrar')">
     <div class="modal" role="dialog" :aria-label="estadio.nombre">
-      <button class="btn-cerrar" @click="$emit('cerrar')">✕</button>
+      <button class="btn-cerrar" @click="$emit('cerrar')"><X :size="16" /></button>
 
       <div class="modal-img-wrap">
         <img :src="estadio.imagen" :alt="estadio.nombre" class="modal-img" @error="onImgError" />
-        <span v-if="estadio.esFinal" class="badge-final">🏆 SEDE DE LA FINAL</span>
+        <span v-if="estadio.esFinal" class="badge-final"><Trophy :size="13" /> SEDE DE LA FINAL</span>
       </div>
 
       <div class="modal-body">
+        <div class="modal-encabezado">
+          <h2 class="modal-titulo">{{ estadio.nombre }}</h2>
+          <p class="modal-local">{{ estadio.nombreLocal }}</p>
+          <p class="modal-ciudad"><MapPin :size="14" /> {{ estadio.ciudad }} · {{ bandera }} {{ estadio.pais }}</p>
+        </div>
+
+        <p class="modal-descripcion">{{ estadio.descripcion }}</p>
+
+        <div class="dato-curioso">
+          <span class="dato-label"><Lightbulb :size="14" /> Dato curioso</span>
+          <p>{{ estadio.datoCurioso }}</p>
+        </div>
+
+        <div class="modal-datos">
+          <div class="dato">
+            <span class="dato-ico"><Users :size="22" /></span>
+            <span class="dato-val">{{ estadio.capacidad.toLocaleString() }}</span>
+            <span class="dato-lbl">Capacidad</span>
+          </div>
+          <div class="dato">
+            <span class="dato-ico"><Calendar :size="22" /></span>
+            <span class="dato-val">{{ estadio.inaugurado }}</span>
+            <span class="dato-lbl">Inaugurado</span>
+          </div>
+          <div class="dato">
+            <span class="dato-ico"><Trophy :size="22" /></span>
+            <span class="dato-val">{{ estadio.partidos }}</span>
+            <span class="dato-lbl">Partidos</span>
+          </div>
+          <div class="dato">
+            <span class="dato-ico"><Layers :size="22" /></span>
+            <span class="dato-val dato-val--sm">{{ estadio.superficie }}</span>
+            <span class="dato-lbl">Superficie</span>
+          </div>
+          <div class="dato">
+            <span class="dato-ico"><Building2 :size="22" /></span>
+            <span class="dato-val dato-val--sm">{{ estadio.techo }}</span>
+            <span class="dato-lbl">Techo</span>
+          </div>
+        </div>
+
+        <div v-if="estadio.audio" class="audio-section">
+          <p class="audio-label"><Headphones :size="16" /> Audio descriptivo</p>
+          <audio ref="audioEl" :src="estadio.audio" preload="none" controls class="audio-player">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+        </div>
       </div>
     </div>
   </div>
@@ -16,6 +63,7 @@
 
 <script setup>
 import { computed, ref, onUnmounted } from 'vue'
+import { X, MapPin, Lightbulb, Users, Calendar, Trophy, Layers, Building2, Headphones } from '@lucide/vue'
 
 const props = defineProps({ estadio: Object })
 defineEmits(['cerrar'])
@@ -89,6 +137,9 @@ onUnmounted(() => {
   font-size: 0.8rem;
   padding: 0.3rem 0.8rem;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .modal-body { padding: 1.5rem; }
@@ -107,7 +158,9 @@ onUnmounted(() => {
   line-height: 1.6;
 }
 .dato-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.35rem;
@@ -133,7 +186,7 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 0.2rem;
 }
-.dato-ico { font-size: 1.2rem; }
+.dato-ico { display: flex; justify-content: center; color: var(--accent); }
 .dato-val { font-size: 0.95rem; font-weight: 700; color: var(--accent); }
 .dato-val--sm { font-size: 0.75rem; }
 .dato-lbl { font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
@@ -144,6 +197,9 @@ onUnmounted(() => {
   padding: 1rem;
 }
 .audio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: 600;
   color: var(--accent);
   font-size: 0.9rem;

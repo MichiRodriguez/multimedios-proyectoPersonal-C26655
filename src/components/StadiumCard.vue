@@ -8,13 +8,12 @@
         loading="lazy"
         @error="onImgError"
       />
-      <span v-if="estadio.esFinal" class="badge-final">🏆 FINAL</span>
     </div>
 
     <div class="card-body">
       <h2 class="card-nombre">{{ estadio.nombre }}</h2>
       <p class="card-local">{{ estadio.nombreLocal }}</p>
-      <p class="card-ciudad">📍 {{ estadio.ciudad }}</p>
+      <p class="card-ciudad"><MapPin :size="13" /> {{ estadio.ciudad }}</p>
 
       <div class="card-stats">
         <div class="stat">
@@ -33,7 +32,7 @@
 
       <div class="card-tags">
         <span class="categoria-tag">{{ estadio.categoria }}</span>
-        <span v-if="estadio.audio" class="audio-tag">🎧 Audio</span>
+        <span v-if="estadio.audio" class="audio-tag"><Headphones :size="12" /> Audio</span>
       </div>
     </div>
   </article>
@@ -41,6 +40,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { MapPin, Headphones } from '@lucide/vue'
 
 const props = defineProps({ estadio: Object })
 defineEmits(['abrir'])
@@ -162,5 +162,8 @@ function onImgError(e) {
   border-radius: 999px;
   background: rgba(201,162,39,0.15);
   color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 </style>

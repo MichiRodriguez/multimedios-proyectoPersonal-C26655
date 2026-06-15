@@ -1,7 +1,7 @@
 <template>
   <section class="filter-section">
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
+      <Search class="search-icon" :size="18" />
       <input
         class="search-input"
         type="text"
@@ -9,7 +9,9 @@
         :value="busqueda"
         @input="$emit('update:busqueda', $event.target.value)"
       />
-      <button v-if="busqueda" class="clear-btn" @click="$emit('update:busqueda', '')">✕</button>
+      <button v-if="busqueda" class="clear-btn" @click="$emit('update:busqueda', '')">
+        <X :size="16" />
+      </button>
     </div>
 
     <div class="filtros">
@@ -31,6 +33,7 @@
 </template>
 
 <script setup>
+import { Search, X } from '@lucide/vue'
 defineProps({
   busqueda: String,
   paisActivo: String,
@@ -39,7 +42,7 @@ defineProps({
 defineEmits(['update:busqueda', 'update:paisActivo'])
 
 const paises = [
-  { valor: 'todos', nombre: 'Todos',   bandera: '🌎' },
+  { valor: 'todos', nombre: 'Todos',   bandera: '' },
   { valor: 'USA',    nombre: 'USA',    bandera: '🇺🇸' },
   { valor: 'México', nombre: 'México', bandera: '🇲🇽' },
   { valor: 'Canadá', nombre: 'Canadá', bandera: '🇨🇦' }
