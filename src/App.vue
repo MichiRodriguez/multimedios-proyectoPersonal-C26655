@@ -62,7 +62,7 @@ function toggleDark() {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/data/estadios.json')
+    const res = await fetch(import.meta.env.BASE_URL + 'data/estadios.json')
     if (!res.ok) throw new Error('No se pudo cargar el archivo JSON')
     estadios.value = await res.json()
   } catch (e) {
