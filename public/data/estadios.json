@@ -15,7 +15,7 @@
     "partidos": 8,
     "esFinal": true,
     "categoria": "Final",
-    "audio": null
+    "audio": "/audio/metlife.mp3"
   },
   {
     "id": 2,
@@ -33,7 +33,7 @@
     "partidos": 8,
     "esFinal": false,
     "categoria": "Cuartos de final",
-    "audio": null
+    "audio": "/audio/sofi.mp3"
   },
   {
     "id": 3,
@@ -51,7 +51,7 @@
     "partidos": 9,
     "esFinal": false,
     "categoria": "Semifinal",
-    "audio": null
+    "audio": "/audio/dallas.mp3"
   },
   {
     "id": 4,
@@ -69,7 +69,7 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Fase de grupos",
-    "audio": null
+    "audio": "/audio/sanfrancisco.mp3"
   },
   {
     "id": 5,
@@ -87,7 +87,7 @@
     "partidos": 5,
     "esFinal": false,
     "categoria": "Cuartos de final",
-    "audio": null
+    "audio": "/audio/kansascity.mp3"
   },
   {
     "id": 6,
@@ -105,7 +105,7 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Cuartos de final",
-    "audio": null
+    "audio": "/audio/boston.mp3"
   },
   {
     "id": 7,
@@ -123,7 +123,7 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Octavos de final",
-    "audio": null
+    "audio": "/audio/filadelfia.mp3"
   },
   {
     "id": 8,
@@ -141,7 +141,7 @@
     "partidos": 7,
     "esFinal": false,
     "categoria": "Semifinal",
-    "audio": null
+    "audio": "/audio/atlanta.mp3"
   },
   {
     "id": 9,
@@ -159,7 +159,7 @@
     "partidos": 5,
     "esFinal": false,
     "categoria": "Octavos de final",
-    "audio": null
+    "audio": "/audio/azteca.mp3"
   },
   {
     "id": 10,
@@ -177,7 +177,7 @@
     "partidos": 4,
     "esFinal": false,
     "categoria": "Fase de grupos",
-    "audio": null
+    "audio": "/audio/monterrey.mp3"
   },
   {
     "id": 11,
@@ -195,7 +195,7 @@
     "partidos": 4,
     "esFinal": false,
     "categoria": "Fase de grupos",
-    "audio": null
+    "audio": "/audio/guadalajara.mp3"
   },
   {
     "id": 12,
@@ -213,7 +213,7 @@
     "partidos": 7,
     "esFinal": false,
     "categoria": "Octavos de final",
-    "audio": null
+    "audio": "/audio/vancouver.mp3"
   },
   {
     "id": 13,
@@ -231,7 +231,7 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Fase de grupos",
-    "audio": null
+    "audio": "/audio/toronto.mp3"
   },
   {
     "id": 14,
@@ -249,7 +249,7 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Octavos de final",
-    "audio": null
+    "audio": "/audio/houston.mp3"
   },
   {
     "id": 15,
@@ -267,7 +267,7 @@
     "partidos": 7,
     "esFinal": false,
     "categoria": "Tercer lugar",
-    "audio": null
+    "audio": "/audio/miami.mp3"
   },
   {
     "id": 16,
@@ -285,6 +285,6 @@
     "partidos": 6,
     "esFinal": false,
     "categoria": "Octavos de final",
-    "audio": null
+    "audio": "/audio/seattle.mp3"
   }
 ]
