@@ -33,7 +33,19 @@ O bien, ingresar al link de Pages
 ## Capturas de pantalla
 
 ![Modo claro](public/img/captura1-modoclaro.png)
+*Screenshot de cómo se ve en modo calro*
+
 ![Modo oscuro](public/img/captura2-modooscuro.png)
+*Screenshot de cómo se ve en modo oscuro*
+
 ![Filtración por país](public/img/captura3-filtracionporpais.png)
+*Screenshot de cómo se ve la filtración por paises*
+
 ![Detalle de estadio](public/img/captura4-detalleestadio.png)
+*Screenshot de cómo se ve el detalle de cada estadio*
+
 ![npm run dev](public/img/captura5-npmrundev.png)
+*Screenshot de demostración de uso de npm run dev*
+
+![Cambio de link](public/img/captura6-muestralink.png)
+*Screenshot de cómo se ve el link luego de realizar cambios para que se muestren los datos en pages, se usó la propiedad base de Vite y import.meta.env.BASE_URL para que las rutas se ajusten automáticamente según el entorno*
