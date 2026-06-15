@@ -64,7 +64,13 @@ onMounted(async () => {
   try {
     const res = await fetch(import.meta.env.BASE_URL + 'data/estadios.json')
     if (!res.ok) throw new Error('No se pudo cargar el archivo JSON')
-    estadios.value = await res.json()
+    const data = await res.json()
+    const base = import.meta.env.BASE_URL
+    estadios.value = data.map(e => ({
+      ...e,
+      imagen: base + e.imagen.replace(/^\//, ''),
+      audio: e.audio ? base + e.audio.replace(/^\//, '') : null
+    }))
   } catch (e) {
     error.value = e.message
   } finally {
