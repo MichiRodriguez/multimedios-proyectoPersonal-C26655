@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p>IF7102 Multimedios 2026</p>
-    <p class="footer-sub">Datos: FIFA.com · Imágenes: Wikimedia Commons (CC BY-SA)</p>
+    <p class="footer-sub">Datos: FIFA.com · Imágenes: Wikimedia Commons (CC BY-SA) · Audios: TTSMaker</p>
   </footer>
 </template>
 
